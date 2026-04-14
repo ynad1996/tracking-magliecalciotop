@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --omit=dev
 
+RUN npx playwright install chromium
+
 COPY . .
 
 ENV NODE_ENV=production
